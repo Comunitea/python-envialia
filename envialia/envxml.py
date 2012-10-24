@@ -116,7 +116,7 @@ class ENVXML(object):
         '</ROClientIDHeader>' \
         '</soap:Header>' \
         '<soap:Body>' \
-        '<WebServService___GrabaEnvio5 xmlns="http://tempuri.org/">' \
+        '<WebServService___GrabaEnvio7 xmlns="http://tempuri.org/">' \
         '<strCodAgeCargo>%(agency_cargo)s</strCodAgeCargo>' \
         '<strCodAgeOri>%(agency_origin)s</strCodAgeOri>' \
         '<strAlbaran>%(reference)s</strAlbaran>' \
@@ -172,7 +172,7 @@ class ENVXML(object):
         '<strFranjaHoraria>%(gtm)s</strFranjaHoraria>' \
         '<dtHoraEnvIni>%(delivery_start)s</dtHoraEnvIni>' \
         '<dtHoraEnvFin>%(delivery_finish)s</dtHoraEnvFin>' \
-        '</WebServService___GrabaEnvio5>' \
+        '</WebServService___GrabaEnvio7>' \
         '</soap:Body>' \
         '</soap:Envelope>' % {
             'session':session,
@@ -227,7 +227,7 @@ class ENVXML(object):
             'customer_state':data.get('customer_state',''),
             'customer_mobile':data.get('customer_mobile',''),
             'customer_email':data.get('customer_email',''),
-            'insert':data.get('insert',False),
+            'insert':data.get('insert',True),
             'gtm':data.get('gtm',''),
             'delivery_start':data.get('delivery_start',''),
             'delivery_finish':data.get('delivery_finish',''),
