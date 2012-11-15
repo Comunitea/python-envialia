@@ -77,10 +77,26 @@ class Picking(API):
         :param data: Dictionary of values
         :return: Integer ID of new record
         """
+        delivery = {}
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_create(self.session, data)
         data = self.connect(data)
-        return data
+        dom = parseString(data)
+        # Get error
+        try:
+            error = dom.getElementsByTagName('faultstring')
+            if error[0].firstChild:
+                delivery = {'error':error[0].firstChild.data}
+        except:
+            pass
+        # Get reference
+        try:
+            reference = dom.getElementsByTagName('v1:strAlbaranOut')
+            if reference[0].firstChild:
+                delivery = {'reference':reference[0].firstChild.data}
+        except:
+            pass
+        return delivery
 
     def delete(self, reference, data):
         """
