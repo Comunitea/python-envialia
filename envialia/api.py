@@ -7,6 +7,7 @@ from envialia.envxml import ENVXML
 from xml.dom.minidom import parseString
 import urllib2
 
+
 class API(object):
     """
     Generic API to connect to envialia
@@ -99,4 +100,4 @@ class API(object):
         """
         Test connection to Envialia webservices
         """
-        return {'session':self.session,'error':self.error}
+        return {'session': self.session, 'error': self.error}

@@ -6,6 +6,7 @@ import os
 from setuptools import setup, find_packages
 import envialia
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
@@ -13,7 +14,7 @@ setup(name='envialia',
         version=envialia.__version__,
         author='Zikzakmedia SL',
         author_email='zikzak@zikzakmedia.com',
-        url="https://bitbucket.org/zikzakmedia/python-envialia",
+        url="https://www.zikzakmedia.com",
         description="Python API Envialia carrier",
         long_description=read('README'),
         download_url="https://bitbucket.org/zikzakmedia/python-envialia",
@@ -22,7 +23,7 @@ setup(name='envialia',
             'Development Status :: 4 - Beta',
             'Environment :: Web Environment',
             'Intended Audience :: Developers',
-            'License :: OSI Approved :: GNU Affero General Public License v3', 
+            'License :: OSI Approved :: GNU Affero General Public License v3',
             'Operating System :: OS Independent',
             'Programming Language :: Python',
             'Topic :: Internet :: WWW/HTTP :: Dynamic Content',

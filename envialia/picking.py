@@ -8,11 +8,12 @@ from xml.dom.minidom import parseString
 import re
 import datetime
 
+
 class Picking(API):
     """
     Picking API
     """
-    __slots__ = ( )
+    __slots__ = ()
 
     def list(self, date=None):
         """
@@ -86,14 +87,14 @@ class Picking(API):
         try:
             error = dom.getElementsByTagName('faultstring')
             if error[0].firstChild:
-                delivery = {'error':error[0].firstChild.data}
+                delivery = {'error': error[0].firstChild.data}
         except:
             pass
         # Get reference
         try:
             reference = dom.getElementsByTagName('v1:strAlbaranOut')
             if reference[0].firstChild:
-                delivery = {'reference':reference[0].firstChild.data}
+                delivery = {'reference': reference[0].firstChild.data}
         except:
             pass
         return delivery

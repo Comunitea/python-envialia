@@ -15,14 +15,14 @@ with API(agency, customer, password) as envialia_api:
     print envialia_api.test_connection()
 
 with Picking(agency, customer, password) as picking_api:
-    date = None # date YYYY/MM/DD
+    date = None  # date YYYY/MM/DD
     print "List all deliveries"
     print picking_api.list(date)
 
     data = {}
     data['agency_cargo'] = agency
     data['agency_origin'] = agency
-    # data['reference'] = '' # envialia reference use numbers. Use envialia reference
+    # data['reference'] = ''  # envialia use numbers in reference
     # data['picking_date'] = '2012/11/05' # not date, today
     # data['agency_dest'] = ''
     data['service_code'] = 10
@@ -45,7 +45,7 @@ with Picking(agency, customer, password) as picking_api:
     picking_api.create(data)
 
     print "List all deliveries"
-    date = None # date YYYY/MM/DD
+    date = None  # date YYYY/MM/DD
     deliveries = picking_api.list(date)
 
     data = {}
