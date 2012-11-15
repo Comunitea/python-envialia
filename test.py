@@ -26,8 +26,6 @@ with Picking(agency, customer, password) as picking_api:
     # data['picking_date'] = '2012/11/05' # not date, today
     # data['agency_dest'] = ''
     data['service_code'] = 10
-    data['customer_cp'] = '08720'
-
     data['company_code'] = 'Zikzakmedia'
     data['customer_name'] = 'Raimon'
     data['customer_street'] = 'Dr. Fleming'
