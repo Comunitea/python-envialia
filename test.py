@@ -34,12 +34,6 @@ with Picking(agency, customer, password) as picking_api:
     data['customer_city'] = 'Vilafranca del Penedes'
     data['customer_zip'] = '08720'
     data['company_phone'] = '938902108'
-    data['customer_name'] = 'Raimon Esteve'
-    data['customer_street'] = 'Dr. Fleming'
-    data['customer_street_number'] = '28'
-    data['customer_street_floor'] = 'Baixos'
-    data['customer_city'] = 'Vilafranca del Penedes'
-    data['customer_phone'] = '938902108'
     picking_api.create(data)
 
     print "List all deliveries"
