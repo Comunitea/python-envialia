@@ -272,10 +272,10 @@ class ENVXML(object):
         '</ROClientIDHeader>' \
         '</soap:Header>' \
         '<soap:Body>' \
-        '<WebServService___ConsEtiquetaEnvio>' \
+        '<WebServService___ConsEtiquetaEnvio3>' \
         '<strCodAgeOri>%(agency_cargo)s</strCodAgeOri>' \
         '<strAlbaran>%(reference)s</strAlbaran>' \
-        '</WebServService___ConsEtiquetaEnvio>' \
+        '</WebServService___ConsEtiquetaEnvio3>' \
         '</soap:Body>' \
         '</soap:Envelope>' % {
             'session':session,

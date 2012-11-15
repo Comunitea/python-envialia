@@ -4,10 +4,10 @@
 __version__ = '0.0.1'
 
 __all__ = [
-            'API',
-            'ENVXML',
-            'Picking',
-            ]
+    'API',
+    'ENVXML',
+    'Picking',
+]
 
 from api import API
 from envxml import ENVXML
