@@ -23,6 +23,8 @@ class Picking(API):
 
         :return: List delivery references
         """
+        if not self.session:
+            return False
         if not date:
             today = datetime.date.today()
             date = today.strftime('%Y/%m/%d')
@@ -53,6 +55,8 @@ class Picking(API):
 
         :return: List of dictionaries of matching records
         """
+        if not self.session:
+            return False
         delivery = {}
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_info(self.session, reference, data)
@@ -78,6 +82,8 @@ class Picking(API):
         :param data: Dictionary of values
         :return: Integer ID of new record
         """
+        if not self.session:
+            return False
         delivery = {}
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_create(self.session, data)
@@ -107,6 +113,8 @@ class Picking(API):
         :param data: Dictionary of values
         :return: True/False
         """
+        if not self.session:
+            return False
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_delete(self.session, reference, data)
         data = self.connect(data)
@@ -125,6 +133,8 @@ class Picking(API):
         :param data: Dictionary of values
         :return: String
         """
+        if not self.session:
+            return False
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_state(self.session, reference, data)
         data = self.connect(data)
@@ -142,6 +152,8 @@ class Picking(API):
         :param data: Dictionary of values
         :return: String
         """
+        if not self.session:
+            return False
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_label(self.session, reference, data)
         data = self.connect(data)
