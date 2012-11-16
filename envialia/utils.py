@@ -11,7 +11,7 @@ def envialia_url(debug=False):
     if debug:
         return 'http://wstest.envialia-urgente.com:9082/soap'
     else:
-        return 'http://wstest.envialia-urgente.com:9082/soap'  # TODO
+        return 'http://ws.envialia-urgente.com'
 
 
 def services():
