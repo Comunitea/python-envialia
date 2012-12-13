@@ -14,7 +14,7 @@ with API(agency, customer, password, debug) as envialia_api:
     print "Test connection"
     print envialia_api.test_connection()
 
-with Picking(agency, customer, password) as picking_api:
+with Picking(agency, customer, password, debug) as picking_api:
     date = None  # date YYYY/MM/DD
     print "List all deliveries"
     print picking_api.list(date)
