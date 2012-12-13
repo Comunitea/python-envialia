@@ -10,7 +10,7 @@ print "Envialia services"
 services = services()
 print services
 
-with API(agency, customer, password) as envialia_api:
+with API(agency, customer, password, debug) as envialia_api:
     print "Test connection"
     print envialia_api.test_connection()
 
