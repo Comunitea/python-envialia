@@ -149,7 +149,7 @@ class ENVXML(object):
         '<dAltoOri>%(height)s</dAltoOri>' \
         '<dAnchoOri>%(width)s</dAnchoOri>' \
         '<dLargoOri>%(large)s</dLargoOri>' \
-        '<dReembolso>%(refund)s</dReembolso>' \
+        '<dReembolso>%(cash_ondelivery)s</dReembolso>' \
         '<dValor>%(total)s</dValor>' \
         '<dAnticipo>%(advance)s</dAnticipo>' \
         '<dCobCli>%(customer_total)s</dCobCli>' \
@@ -209,7 +209,7 @@ class ENVXML(object):
             'height': data.get('height', 0),
             'width': data.get('width', 0),
             'large': data.get('large', 0),
-            'refund': data.get('refund', 0),
+            'cash_ondelivery': data.get('cash_ondelivery', 0),
             'total': data.get('total', 0),
             'advance': data.get('advance', 0),
             'customer_total': data.get('customer_total', 0),
