@@ -142,6 +142,7 @@ class ENVXML(object):
         '<strPisoDes>%(customer_street_floor)s</strPisoDes>' \
         '<strPobDes>%(customer_city)s</strPobDes>' \
         '<strCPDes>%(customer_zip)s</strCPDes>' \
+        '<strTlfDes>%(customer_phone)s</strTlfDes>' \
         '<intDoc>%(document)s</intDoc>' \
         '<intPaq>%(packages)s</intPaq>' \
         '<dPesoOri>%(weight)s</dPesoOri>' \
@@ -201,6 +202,7 @@ class ENVXML(object):
             'customer_street_floor': data.get('customer_street_floor', ''),
             'customer_city': data.get('customer_city', ''),
             'customer_zip': data.get('customer_zip', ''),
+            'customer_phone': data.get('customer_phone', ''),
             'document': data.get('document', 1),
             'packages': data.get('packages', 1),
             'weight': data.get('weight', 0),
