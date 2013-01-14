@@ -204,7 +204,7 @@ class ENVXML(object):
             'customer_zip': data.get('customer_zip', ''),
             'customer_phone': data.get('customer_phone', ''),
             'document': data.get('document', 1),
-            'packages': data.get('packages', 1),
+            'packages': data.get('packages', 0),
             'weight': data.get('weight', 0),
             'height': data.get('height', 0),
             'width': data.get('width', 0),
