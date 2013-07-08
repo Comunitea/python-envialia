@@ -161,7 +161,7 @@ class ENVXML(object):
         '<boAnulado>%(canceled)s</boAnulado>' \
         '<boAcuse>%(receipt)s</boAcuse>' \
         '<strCodRep>%(delivery_code)s</strCodRep>' \
-        '<strRef>%(reference)s</strRef>' \
+        '<strRef>%(ref)s</strRef>' \
         '<strCodSalRuta>%(way_code)s</strCodSalRuta>' \
         '<dBaseImp>%(amount_total)s</dBaseImp>' \
         '<dImpuesto>%(amount_tax)s</dImpuesto>' \
@@ -221,7 +221,7 @@ class ENVXML(object):
             'canceled': data.get('canceled', False),
             'receipt': data.get('receipt', False),
             'delivery_code': data.get('delivery_code', ''),
-            'reference': data.get('reference', ''),
+            'ref': data.get('ref', ''),
             'way_code': data.get('way_code', ''),
             'amount_total': data.get('amount_total', 0),
             'amount_tax': data.get('amount_tax', 0),
