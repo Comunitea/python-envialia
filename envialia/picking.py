@@ -159,6 +159,8 @@ class Picking(API):
         data = self.connect(data)
         dom = parseString(data)
         label = dom.getElementsByTagName('v1:strEtiqueta')
+        if not label:
+            return False
         if not label[0].firstChild:
             return False
         return label[0].firstChild.data
