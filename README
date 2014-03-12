@@ -1,6 +1,90 @@
-envialia
+Envialia
 ========
 
-Python API Envialia carrier
+Python API Envialia carrier.
 
-For a example open test.py file
+Features
+--------
+
+- Services
+- Test connection
+- List all shipments (by date)
+- Create/Send shipments to Envialia
+- Get shipment info (details)
+- Get shipment state
+- Delete shipment
+
+Usage Examples
+--------------
+
+Example API in test.py file
+
+Services
+--------
+
+.. code-block:: python
+
+    from envialia.utils import services
+    services()
+
+Test connection
+---------------
+
+.. code-block:: python
+
+    with API(agency, customer, password, debug) as envialia_api:
+         envialia_api.test_connection()
+
+List all shipments by date
+--------------------------
+
+.. code-block:: python
+
+    with Picking(agency, customer, password, debug) as picking_api:
+        date = None  # date YYYY/MM/DD
+        print picking_api.list(date)
+
+Create/Send shipments to Envialia
+---------------------------------
+
+.. code-block:: python
+
+    with Picking(agency, customer, password, debug) as picking_api:
+        data = {...}
+        reference = picking_api.create(data)
+
+Get shipment info (details)
+---------------------------
+
+.. code-block:: python
+
+    with Picking(agency, customer, password, debug) as picking_api:
+        reference = '123456'
+        data = {}
+        data['agency_origin'] = agency
+        data['agency_cargo'] = agency
+        picking_api.info(reference, data)
+
+Get shipment state
+------------------
+
+.. code-block:: python
+
+    with Picking(agency, customer, password, debug) as picking_api:
+        reference = '123456'
+        data = {}
+        data['agency_origin'] = agency
+        data['agency_cargo'] = agency
+        picking_api.state(reference, data)
+
+Delete shipment
+---------------
+
+.. code-block:: python
+
+    with Picking(agency, customer, password, debug) as picking_api:
+        reference = '123456'
+        data = {}
+        data['agency_origin'] = agency
+        data['agency_cargo'] = agency
+        picking_api.delete(reference, data)
