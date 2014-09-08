@@ -3,6 +3,7 @@
 
 from envialia.envxml import ENVXML
 from envialia.api import API
+from envialia.utils import status_codes
 
 from xml.dom.minidom import parseString
 import re
@@ -125,7 +126,7 @@ class Picking(API):
             return False
         return True
 
-    def state(self, reference, data):
+    def state(self, reference, data, get_list=False):
         """
         Get State picking using reference
 
@@ -138,11 +139,28 @@ class Picking(API):
         envxml = ENVXML()
         data = envxml.envialia_xml_picking_state(self.session, reference, data)
         data = self.connect(data)
+
         dom = parseString(data)
         state = dom.getElementsByTagName('v1:strEnvEstados')
         if not state[0].firstChild:
             return None
-        return state[0].firstChild.data
+
+        if not get_list:
+            return state[0].firstChild.data
+
+        list_dom = parseString(state[0].firstChild.data)
+
+        states = []
+        for s in list_dom.firstChild.getElementsByTagName('ENV_ESTADOS'):
+            current_state = dict(
+                    STATUS=status_codes().get(s.attributes.get('V_COD_TIPO_EST').nodeValue, None)
+                )
+            for k in s.attributes.keys():
+                current_state[k] = s.attributes.get(k).nodeValue
+
+            states.append(current_state)
+
+        return states
 
     def label(self, reference, data):
         """

@@ -41,3 +41,12 @@ def services():
         'V14': 'Valija 14h',
     }
     return services
+
+def status_codes():
+    return {
+        '0': 'Documentado',
+        '1': 'En transito',
+        '2': 'En reparto',
+        '3': 'Incidencia',
+        '4': 'Entregado',
+    }
