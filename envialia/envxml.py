@@ -92,9 +92,9 @@ class ENVXML(object):
         '</soap:Header>' \
         '<soap:Body>' \
         '<WebServService___ConsEnvEstados>' \
-        '<strCodAgeCargo>>%(agency_cargo)s</strCodAgeCargo>' \
-        '<strCodAgeOri>>%(agency_origin)s</strCodAgeOri>' \
-        '<strAlbaran>>%(reference)s</strAlbaran>' \
+        '<strCodAgeCargo>%(agency_cargo)s</strCodAgeCargo>' \
+        '<strCodAgeOri>%(agency_origin)s</strCodAgeOri>' \
+        '<strAlbaran>%(reference)s</strAlbaran>' \
         '</WebServService___ConsEnvEstados>' \
         '</soap:Body>' \
         '</soap:Envelope>' % {
