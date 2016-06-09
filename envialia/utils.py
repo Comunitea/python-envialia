@@ -9,7 +9,7 @@ def envialia_url(debug=False):
     :param debug: If set to true, use Envialia test URL
     """
     if debug:
-        return 'http://wstest.envialia-urgente.com:9082/soap'
+        return 'http://wstest.envialia.com:9085/soap'
     else:
         return 'http://ws.envialia-urgente.com/soap'
 
